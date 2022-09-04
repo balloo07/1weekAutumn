@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     private AudioSource audio;
     void Start()
     {
