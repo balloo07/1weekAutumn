@@ -36,6 +36,8 @@ public class NotesGameController : MonoBehaviour {
         if (_isPlaying) {
             CheckNextNotes ();
             scoreText.text = _score.ToString ();
+            var _chargerMNG = GameObject.Find ("ChargerMNG").GetComponent<ChargerMNG>();
+            _chargerMNG.updateValue((float)_score/20f);
         }
 
     }

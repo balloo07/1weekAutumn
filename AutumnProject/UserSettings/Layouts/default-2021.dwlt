@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2194.286
     height: 1163.4286
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Inspector
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 15
+  controlID: 38
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,22 +317,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts/Charger
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\workspace\1weekAutumn\AutumnProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 58610000
-    m_LastClickedID: 24920
-    m_ExpandedIDs: 00000000386100003a6100003c61000000ca9a3b
+    m_SelectedIDs: 03ca9a3b
+    m_LastClickedID: 1000000003
+    m_ExpandedIDs: 0000000036610000386100003a61000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000386100003a6100003c610000
+    m_ExpandedIDs: 0000000036610000386100003a610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -488,9 +488,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 04600000
-      m_LastClickedID: 24580
-      m_ExpandedIDs: 28fbffff1660000038600000
+      m_SelectedIDs: ee890000
+      m_LastClickedID: 35310
+      m_ExpandedIDs: e6c7ffff18c8ffff84caffffb6caffffe8caffff6aceffff9eceffffdcceffff24cfffff56cfffff98cfffffcacfffff9cd0ffffced0ffffd2efffff3cf5ffff4cf5ffff5cf5ffff6ef5ffffb0f5ffff26fbfffff67900000a7a00000e7a0000187a00008a84000038850000108a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
