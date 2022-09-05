@@ -1373,7 +1373,6 @@ GameObject:
   - component: {fileID: 2122952239}
   - component: {fileID: 2122952238}
   - component: {fileID: 2122952242}
-  - component: {fileID: 2122952241}
   - component: {fileID: 2122952240}
   m_Layer: 5
   m_Name: StartText
@@ -1500,20 +1499,6 @@ CanvasRenderer:
   m_GameObject: {fileID: 2122952236}
   m_CullTransparentMesh: 1
 --- !u!114 &2122952240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122952236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad3f4495d64520044bb3583bc48afc88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 5
-  destory: 0
---- !u!114 &2122952241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
