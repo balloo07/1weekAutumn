@@ -46,6 +46,10 @@ https://mag.executive.itmedia.co.jp/executive/articles/0811/05/news007.html
 ツイステ「リズミック」
 https://www.youtube.com/watch?v=K6-jHVpAi68
 
+AudioMixerを用いた音量調整スライドバー
+https://kingmo.jp/kumonos/unity-audiomixer-control-volume/
+
+
 2Dスプライトにboneを入れて動かす
 https://gomafrontier.com/unity/4315
 
@@ -54,16 +58,18 @@ https://gomafrontier.com/unity/4315
 
 「やあ、ここは魔法のクスリを研究するところ」
 「ぼくは『ハカセくん』」
-「きみには、ぼくが溜めまくった仕事を手伝ってもらいたいな」
-「そうだな…」
+「きみが新しい助手くん？」
+「え、ちがう？まあ、いいや」
+「ぼくが溜めまくった仕事を手伝ってもらいたいんだあ」
+「そうだな……」
 「まずはクスリを作る練習をしようか」
+「ぼくの合図に合わせて魔法をかけて」
 
 表示される〇をタイミング良く
 タップ（クリック）していきましょう
 
 「良い感じ♪
 きみには、こうしてクスリを混ぜる手伝いをしてもらいたいんだ」
-「クスリつくりにはタイミングがだいじだからね」
 
 「それじゃあ、さっそくクスリを作っていこう」
 
