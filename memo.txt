@@ -1,4 +1,13 @@
 
+・すべてのノーツが出たかの判定をしている
+➡プレイヤに接触していないノーツがいる状態で結果発表されてる
+
+・ノーツが２個ずつインスタンシエイトされてる
+
+
+
+
+
 「ためる」
 ・仕事を溜め込む
 ・悪癖を矯正する
@@ -46,9 +55,11 @@ https://mag.executive.itmedia.co.jp/executive/articles/0811/05/news007.html
 ツイステ「リズミック」
 https://www.youtube.com/watch?v=K6-jHVpAi68
 
+[Unity]シンプルな音ゲーの作り方
+https://qiita.com/Teach/items/12a2e3b2f8c09dbbc5bd
+
 AudioMixerを用いた音量調整スライドバー
 https://kingmo.jp/kumonos/unity-audiomixer-control-volume/
-
 
 2Dスプライトにboneを入れて動かす
 https://gomafrontier.com/unity/4315
@@ -84,12 +95,15 @@ https://gomafrontier.com/unity/4315
 〇〇のクスリ
 なんだかうまくいかない日に飲もう
 いや、これは塗り薬だったかな
-（品質：最高・良い・普通・ダメかも）
+（品質：最高・とても良い・良い・普通・ダメかも）
 
 最高（パーフェクト）
-「すごい！ぼくより天才かもしれないね」
+「すばらしい完璧だ！ぼくより天才かもしれないね」
 
-良い（７割）
+とても良い（8割）
+「すごい！良い助手が来てくれたなあ」
+
+良い（6割）
 「おお～！きみはなかなか筋が良いなあ」
 
 普通（４割）

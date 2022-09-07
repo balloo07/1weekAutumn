@@ -17,7 +17,6 @@ public class NotesFallIn : MonoBehaviour {
         this.transform.position += Vector3.down * 10 * Time.deltaTime;
 
         if (this.transform.position.y < -5.0f) {
-            Debug.Log("Miss");
             Destroy(this.gameObject);
         }
 
