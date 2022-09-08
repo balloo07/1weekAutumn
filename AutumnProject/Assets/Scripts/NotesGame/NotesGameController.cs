@@ -20,19 +20,15 @@ public class NotesGameController : MonoBehaviour {
     private float _startTime = 0;
 
     public float timeOffset = -1;
-
-    private bool _isStarted = false;
-    private bool _isPlaying = false;
-    private bool _isFinished = false;
     public GameObject startButton;
 
     public TextMeshProUGUI scoreText;
-    private int _score = 0;
+    public int _score = 0;
     
     [SerializeField] private GameObject _startText;
     [SerializeField] private GameObject _resultPopup;
     [SerializeField] private TextMeshProUGUI _resultText;
-
+    
     public enum GameState
     {
         Prepare,
@@ -40,7 +36,17 @@ public class NotesGameController : MonoBehaviour {
         Pause,
         Result
     }
+    public enum GameResult
+    {
+        Perfect,
+        VeryGood,
+        Good,
+        Ordinary,
+        Bad
+    }
+    
     public GameState _gameState;
+    public GameResult _gameResult;
     
     void Start(){
         _gameState = GameState.Prepare;
@@ -85,25 +91,31 @@ public class NotesGameController : MonoBehaviour {
         // _audioSource.Stop();
         if (_score == _totalNotes)
         {
+            _gameResult = GameResult.Perfect;
             Debug.Log("最高");
             _resultText.text = "PERFECT!";
         }
         else if (_score >= _totalNotes*0.8)
         {
+            _gameResult = GameResult.VeryGood;
             Debug.Log("とても良い");
             _resultText.text = "VERY GOOD!";
         }
         else if (_score >= _totalNotes*0.6)
         {
+            _gameResult = GameResult.Good;
             Debug.Log("良い");
             _resultText.text = "GOOD!";
         }
         else if (_score >= _totalNotes*0.4)
         {
+            _gameResult = GameResult.Ordinary;
             Debug.Log("普通");
             _resultText.text = "ORDINARY";
         }
-        else {
+        else
+        {
+            _gameResult = GameResult.Bad;
             Debug.Log("ダメかも");
             _resultText.text = "BAD...\nDont mind...";
         }
@@ -112,7 +124,7 @@ public class NotesGameController : MonoBehaviour {
     public void StartGame(){
         _startTime = Time.time;
         _audioSource.Play ();
-        _isPlaying = true;
+        _gameState = GameState.MusicPlay;
     }
 
     void CheckNextNotes(){

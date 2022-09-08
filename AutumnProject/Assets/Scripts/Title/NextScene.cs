@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
+    [SerializeField] private string _nextScene;
     private AudioSource audio;
     void Start()
     {
@@ -16,7 +17,7 @@ public class NextScene : MonoBehaviour
         audio.Play();
 
         StartCoroutine(Checking(() => {
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene(_nextScene);
         }));
     }
 
