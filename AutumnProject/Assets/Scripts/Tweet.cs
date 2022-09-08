@@ -19,6 +19,6 @@ public class Tweet : MonoBehaviour
         naichilab.UnityRoomTweet.Tweet ("balloondemo", "ツイートサンプルです。\n"+
                                                        "結果は"+_result+"\n"+
                                                        "スコアは"+_score+"でした\n"+
-                                                       "#アメに唄えば");
+                                                       "#RainyDropsFalll");
     }
 }

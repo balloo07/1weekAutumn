@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NextScene : MonoBehaviour
+public class TitleNextScene : MonoBehaviour
 {
     [SerializeField] private string _nextScene;
     private AudioSource audio;
