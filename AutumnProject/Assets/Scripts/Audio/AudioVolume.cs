@@ -24,7 +24,7 @@ public class AudioVolume : MonoBehaviour
         var volume = Mathf.Clamp(Mathf.Log10(value) * 20f,-80f,0f);
         //audioMixerに代入
         audioMixer.SetFloat("BGM",volume);
-        Debug.Log($"BGM:{volume}");
+        // Debug.Log($"BGM:{volume}");
     }
 
     //SE
@@ -36,6 +36,6 @@ public class AudioVolume : MonoBehaviour
         var volume = Mathf.Clamp(Mathf.Log10(value) * 20f,-80f,0f);
         //audioMixerに代入
         audioMixer.SetFloat("SE",volume);
-        Debug.Log($"SE:{volume}");
+        // Debug.Log($"SE:{volume}");
     }
 }

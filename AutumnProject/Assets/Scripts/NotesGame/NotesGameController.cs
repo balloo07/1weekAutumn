@@ -30,12 +30,20 @@ public class NotesGameController : MonoBehaviour {
     private int _score = 0;
     
     [SerializeField] private GameObject _startText;
-
-
     [SerializeField] private GameObject _resultPopup;
     [SerializeField] private TextMeshProUGUI _resultText;
 
+    public enum GameState
+    {
+        Prepare,
+        MusicPlay,
+        Pause,
+        Result
+    }
+    public GameState _gameState;
+    
     void Start(){
+        _gameState = GameState.Prepare;
         _audioSource = GameObject.Find ("GameMusic").GetComponent<AudioSource> ();
         LoadCSV ();
     }
@@ -45,31 +53,29 @@ public class NotesGameController : MonoBehaviour {
         scoreText.text = "Score:  <color=#99dd44>" + _score.ToString () + "<color=#ffffff> / " + _totalNotes;
 
         //ゲームは開始しているか
-        if (!_isStarted)
+        if (_gameState == GameState.Prepare)
         {
             if (Input.GetKey (KeyCode.Space)) {
                 StartGame();
                 _startText.SetActive(false);
-                _isStarted = true;
+                _gameState = GameState.MusicPlay;
             }
         }
-        else
+        //音楽が流れているか
+        if (_gameState == GameState.MusicPlay)
         {
-            //音楽が流れているか
-            if (_isPlaying) {
-                if (_notesCount < _totalNotes)
-                {
-                    CheckNextNotes ();
-                }
-                else
-                {
-                    //すべてのノードが消えて判定が終わったあと
-                    Invoke(nameof(ShowResult), 2f);
-                    _isPlaying = false;
-                }
-                // var _chargerMNG = GameObject.Find ("ChargerMNG").GetComponent<ChargerMNG>();
-                // _chargerMNG.updateValue((float)_score/20f);
-            }            
+            if (_notesCount < _totalNotes)
+            {
+                CheckNextNotes();
+            }
+            else
+            {
+                //すべてのノードが消えて判定が終わったあと
+                Invoke(nameof(ShowResult), 2f);
+                _gameState = GameState.Result;
+            }
+            // var _chargerMNG = GameObject.Find ("ChargerMNG").GetComponent<ChargerMNG>();
+            // _chargerMNG.updateValue((float)_score/20f);
         }
     }
 
@@ -99,9 +105,8 @@ public class NotesGameController : MonoBehaviour {
         }
         else {
             Debug.Log("ダメかも");
-            _resultText.text = "BAD...";
+            _resultText.text = "BAD...\nDont mind...";
         }
-        _isFinished = false;
     }
 
     public void StartGame(){
@@ -117,9 +122,11 @@ public class NotesGameController : MonoBehaviour {
         }
     }
 
-    void SpawnNotes(int num){
+    void SpawnNotes(int num)
+    {
+        var interval = 2.8f;    //ノート同士の間隔
         Instantiate (notes[num], 
-            new Vector3 (-4.0f + (2.0f * num), 10.0f, 0),
+            new Vector3 (-2*interval + (interval * num), 10.0f, 0),
             Quaternion.identity);
     }
 

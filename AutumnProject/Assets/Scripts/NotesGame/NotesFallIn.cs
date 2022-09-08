@@ -9,7 +9,7 @@ public class NotesFallIn : MonoBehaviour {
     private KeyCode _lineKey;
 
     void Start () {
-        _gameController = GameObject.Find ("NotesGameController").GetComponent<NotesGameController> ();
+        _gameController = GameObject.Find ("GameMNG").GetComponent<NotesGameController> ();
         _lineKey = GameUtil.GetKeyCodeByLineNum(lineNum);
     }
 

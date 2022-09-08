@@ -5,23 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    
     [SerializeField] private GameObject popupMenu;
-    private AudioSource audio;
+    private AudioSource _gameMusic;
+    private AudioSource _menuSE;
+    
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        _menuSE = GetComponent<AudioSource>();
+        _gameMusic = GameObject.Find ("GameMusic").GetComponent<AudioSource> ();
     }
 
     public void MenuActive()
     {
-        audio.Play();
-        Debug.Log("Menuが押されたよ");
+        _menuSE.Play();
+        _gameMusic.Pause();
+        Time.timeScale = 0f;
         popupMenu.SetActive(true);
     }
     
     public void MenuHide()
     {
-        audio.Play();
+        _menuSE.Play();
+        _gameMusic.Play();
+        Time.timeScale = 1f;
         popupMenu.SetActive(false);
     }
 
@@ -31,7 +38,7 @@ public class Menu : MonoBehaviour
         while (true)
         {
             yield return new WaitForFixedUpdate();
-            if (!audio.isPlaying)
+            if (!GetComponent<AudioSource>().isPlaying)
             {
                 callback();
                 break;
