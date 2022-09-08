@@ -21,15 +21,19 @@ public class NotesGameController : MonoBehaviour {
 
     public float timeOffset = -1;
 
+    private bool _isStarted = false;
     private bool _isPlaying = false;
     private bool _isFinished = false;
     public GameObject startButton;
 
     public TextMeshProUGUI scoreText;
     private int _score = 0;
+    
+    [SerializeField] private GameObject _startText;
 
-    [SerializeField] private GameObject ResultPopup;
-    [SerializeField] private TextMeshProUGUI ResultText;
+
+    [SerializeField] private GameObject _resultPopup;
+    [SerializeField] private TextMeshProUGUI _resultText;
 
     void Start(){
         _audioSource = GameObject.Find ("GameMusic").GetComponent<AudioSource> ();
@@ -38,55 +42,69 @@ public class NotesGameController : MonoBehaviour {
 
     void Update () {
         
-        if (_isPlaying) {
-            if (_notesCount < _totalNotes)
-            {
-                CheckNextNotes ();
+        scoreText.text = "Score:  <color=#99dd44>" + _score.ToString () + "<color=#ffffff> / " + _totalNotes;
+
+        //ゲームは開始しているか
+        if (!_isStarted)
+        {
+            if (Input.GetKey (KeyCode.Space)) {
+                StartGame();
+                _startText.SetActive(false);
+                _isStarted = true;
             }
-            else
-            {
-                Invoke(nameof(ShowResult), 3f);
-                _isPlaying = false;
-            }
-            scoreText.text = "Score: " + _score.ToString () + " / " + _totalNotes;
-            // var _chargerMNG = GameObject.Find ("ChargerMNG").GetComponent<ChargerMNG>();
-            // _chargerMNG.updateValue((float)_score/20f);
+        }
+        else
+        {
+            //音楽が流れているか
+            if (_isPlaying) {
+                if (_notesCount < _totalNotes)
+                {
+                    CheckNextNotes ();
+                }
+                else
+                {
+                    //すべてのノードが消えて判定が終わったあと
+                    Invoke(nameof(ShowResult), 2f);
+                    _isPlaying = false;
+                }
+                // var _chargerMNG = GameObject.Find ("ChargerMNG").GetComponent<ChargerMNG>();
+                // _chargerMNG.updateValue((float)_score/20f);
+            }            
         }
     }
 
     private void ShowResult()
     {
-        ResultPopup.SetActive(true);
+        _resultPopup.SetActive(true);
         // _audioSource.Stop();
         if (_score == _totalNotes)
         {
             Debug.Log("最高");
-            ResultText.text = "PERFECT!";
+            _resultText.text = "PERFECT!";
         }
         else if (_score >= _totalNotes*0.8)
         {
             Debug.Log("とても良い");
-            ResultText.text = "VERY GOOD!";
+            _resultText.text = "VERY GOOD!";
         }
         else if (_score >= _totalNotes*0.6)
         {
             Debug.Log("良い");
-            ResultText.text = "GOOD!";
+            _resultText.text = "GOOD!";
         }
         else if (_score >= _totalNotes*0.4)
         {
             Debug.Log("普通");
-            ResultText.text = "ORDINARY";
+            _resultText.text = "ORDINARY";
         }
         else {
             Debug.Log("ダメかも");
-            ResultText.text = "BAD...";
+            _resultText.text = "BAD...";
         }
         _isFinished = false;
     }
 
     public void StartGame(){
-        startButton.SetActive (false);
         _startTime = Time.time;
         _audioSource.Play ();
         _isPlaying = true;
