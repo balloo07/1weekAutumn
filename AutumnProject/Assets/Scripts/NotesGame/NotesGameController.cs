@@ -16,7 +16,7 @@ public class NotesGameController : MonoBehaviour {
     public string filePass;
     private int _notesCount = 0;
 
-    private AudioSource _audioSource;
+    private AudioSource _gameMusic;
     private float _startTime = 0;
 
     public float timeOffset = -1;
@@ -28,7 +28,13 @@ public class NotesGameController : MonoBehaviour {
     [SerializeField] private GameObject _startText;
     [SerializeField] private GameObject _resultPopup;
     [SerializeField] private TextMeshProUGUI _resultText;
-    
+
+    [SerializeField] private AudioClip _perfectBGM;
+    [SerializeField] private AudioClip _veryGoodBGM;
+    [SerializeField] private AudioClip _goodBGM;
+    [SerializeField] private AudioClip _ordinaryBGM;
+    [SerializeField] private AudioClip _badBGM;
+
     public enum GameState
     {
         Prepare,
@@ -47,10 +53,10 @@ public class NotesGameController : MonoBehaviour {
     
     public GameState _gameState;
     public GameResult _gameResult;
-    
+   
     void Start(){
         _gameState = GameState.Prepare;
-        _audioSource = GameObject.Find ("GameMusic").GetComponent<AudioSource> ();
+        _gameMusic = GameObject.Find ("GameMusic").GetComponent<AudioSource> ();
         LoadCSV ();
     }
 
@@ -88,42 +94,56 @@ public class NotesGameController : MonoBehaviour {
     private void ShowResult()
     {
         _resultPopup.SetActive(true);
-        // _audioSource.Stop();
+        // _gameMusic.volume = 0f;
+        var audioSorce = this.GetComponent<AudioSource>();
+        
+        _gameMusic.Stop();
         if (_score == _totalNotes)
         {
             _gameResult = GameResult.Perfect;
+            audioSorce.clip = _perfectBGM;
+            
             Debug.Log("最高");
             _resultText.text = "PERFECT!";
         }
         else if (_score >= _totalNotes*0.8)
         {
             _gameResult = GameResult.VeryGood;
+            audioSorce.clip = _veryGoodBGM;
+
             Debug.Log("とても良い");
             _resultText.text = "VERY GOOD!";
         }
         else if (_score >= _totalNotes*0.6)
         {
             _gameResult = GameResult.Good;
+            audioSorce.clip = _goodBGM;
+
             Debug.Log("良い");
             _resultText.text = "GOOD!";
         }
         else if (_score >= _totalNotes*0.4)
         {
             _gameResult = GameResult.Ordinary;
+            audioSorce.clip = _ordinaryBGM;
+
             Debug.Log("普通");
             _resultText.text = "ORDINARY";
         }
         else
         {
             _gameResult = GameResult.Bad;
+            audioSorce.clip = _badBGM;
+
             Debug.Log("ダメかも");
             _resultText.text = "BAD...\nDont mind...";
         }
+        audioSorce.Play();
     }
 
     public void StartGame(){
         _startTime = Time.time;
-        _audioSource.Play ();
+        _gameMusic.Play ();
         _gameState = GameState.MusicPlay;
     }
 
