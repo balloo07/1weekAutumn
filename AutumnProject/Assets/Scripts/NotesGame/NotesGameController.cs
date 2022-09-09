@@ -11,7 +11,7 @@ public class NotesGameController : MonoBehaviour {
     public GameObject[] notes;
     private List<float> _timing = new List<float>();
     private List<int> _lineNum = new List<int>();
-    private int _totalNotes;
+    public int _totalNotes;
 
     public string filePass;
     private int _notesCount = 0;
@@ -20,7 +20,6 @@ public class NotesGameController : MonoBehaviour {
     private float _startTime = 0;
 
     public float timeOffset = -1;
-    public GameObject startButton;
 
     public TextMeshProUGUI scoreText;
     public int _score = 0;

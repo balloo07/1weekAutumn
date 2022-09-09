@@ -15,10 +15,11 @@ public class Tweet : MonoBehaviour
     public void GenerateTweet()
     {
         var _score = _gameController._score.ToString();
+        var _totalScore = _gameController._totalNotes.ToString();
         var _result = _gameController._gameResult;
-        naichilab.UnityRoomTweet.Tweet ("balloondemo", "ツイートサンプルです。\n"+
+        naichilab.UnityRoomTweet.Tweet ("rainydropsfall", "ミニゲーム「RainyDropsFall」で遊びました！\n"+
                                                        "結果は"+_result+"\n"+
-                                                       "スコアは"+_score+"でした\n"+
+                                                       "スコアは"+_score+"/"+_totalScore+"でした\n"+
                                                        "#RainyDropsFalll");
     }
 }
