@@ -54,6 +54,7 @@ public class NotesGameController : MonoBehaviour {
     public GameResult _gameResult;
    
     void Start(){
+        Time.timeScale = 1f;
         _gameState = GameState.Prepare;
         _gameMusic = GameObject.Find ("GameMusic").GetComponent<AudioSource> ();
         LoadCSV ();
@@ -96,6 +97,7 @@ public class NotesGameController : MonoBehaviour {
         // _gameMusic.volume = 0f;
         var audioSorce = this.GetComponent<AudioSource>();
         
+        Time.timeScale = 0f;
         _gameMusic.Stop();
         if (_score == _totalNotes)
         {

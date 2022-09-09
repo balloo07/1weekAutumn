@@ -9,6 +9,7 @@ public class TitleNextScene : MonoBehaviour
     private AudioSource audio;
     void Start()
     {
+        Time.timeScale = 1f;
         audio = GetComponent<AudioSource>();
     }
 
