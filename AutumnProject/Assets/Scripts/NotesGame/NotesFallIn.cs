@@ -1,14 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class NotesFallIn : MonoBehaviour {
-
+public class NotesFallIn : MonoBehaviour
+{
+    private GameObject _gameProfile;
     public int lineNum;
     private NotesGameController _gameController;
     private bool isInLine = false;
     private KeyCode _lineKey;
 
     void Start () {
+        _gameProfile = GameObject.Find("GameProfile");
         _gameController = GameObject.Find ("GameMNG").GetComponent<NotesGameController> ();
         _lineKey = GameUtil.GetKeyCodeByLineNum(lineNum);
     }
@@ -39,6 +41,7 @@ public class NotesFallIn : MonoBehaviour {
 
         if (Input.GetKeyDown (key)) {
             _gameController.GoodTimingFunc (lineNum);
+            _gameProfile.GetComponent<GameProfile>()._totalDropsCount ++;
             Destroy(this.gameObject);
         }
     }

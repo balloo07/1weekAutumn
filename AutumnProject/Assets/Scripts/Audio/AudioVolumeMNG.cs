@@ -1,15 +1,22 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class AudioVolume : MonoBehaviour
+public class AudioVolumeMNG : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider bgmSlider;
     [SerializeField] private Slider seSlider;
+    private GameObject _gameProfile;
 
     private void Start()
     {
+        _gameProfile = GameObject.Find("GameProfile");
+
+        bgmSlider.value = _gameProfile.GetComponent<GameProfile>()._BGMvolume;
+        seSlider.value = _gameProfile.GetComponent<GameProfile>()._SEvolume;
+
         //スライダーを動かした時の処理を登録
         bgmSlider.onValueChanged.AddListener(SetAudioMixerBGM);
         seSlider.onValueChanged.AddListener(SetAudioMixerSE);
@@ -18,8 +25,7 @@ public class AudioVolume : MonoBehaviour
     //BGM
     private void SetAudioMixerBGM(float value)
     {
-        //5段階補正
-        value /= 5;
+        _gameProfile.GetComponent<GameProfile>()._BGMvolume = value;
         //-80~0に変換
         var volume = Mathf.Clamp(Mathf.Log10(value) * 20f,-80f,0f);
         //audioMixerに代入
@@ -31,8 +37,7 @@ public class AudioVolume : MonoBehaviour
     //SE
     private void SetAudioMixerSE(float value)
     {
-        //5段階補正
-        value /= 5;
+        _gameProfile.GetComponent<GameProfile>()._SEvolume = value;
         //-80~0に変換
         var volume = Mathf.Clamp(Mathf.Log10(value) * 20f,-80f,0f);
         //audioMixerに代入

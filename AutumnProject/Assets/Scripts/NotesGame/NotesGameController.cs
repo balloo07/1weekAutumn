@@ -6,8 +6,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 
-public class NotesGameController : MonoBehaviour {
-
+public class NotesGameController : MonoBehaviour
+{
+    //ゲームの進行状況（シーンをまたいで保存）
+    private GameObject _gameProfile;
+        
     public GameObject[] notes;
     private List<float> _timing = new List<float>();
     private List<int> _lineNum = new List<int>();
@@ -58,6 +61,7 @@ public class NotesGameController : MonoBehaviour {
         _gameState = GameState.Prepare;
         _gameMusic = GameObject.Find ("GameMusic").GetComponent<AudioSource> ();
         LoadCSV ();
+        _gameProfile = GameObject.Find("GameProfile");
     }
 
     void Update () {
@@ -94,7 +98,6 @@ public class NotesGameController : MonoBehaviour {
     private void ShowResult()
     {
         _resultPopup.SetActive(true);
-        // _gameMusic.volume = 0f;
         var audioSorce = this.GetComponent<AudioSource>();
         
         Time.timeScale = 0f;
