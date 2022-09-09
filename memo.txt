@@ -1,9 +1,4 @@
 
-・アメを手に入れた時にエフェクト（せめて音）
-・BGMとSEのバーをStart()で現状のAudioMixerの値に合わせないと
-（リトライ時にバーだけ初期状態に戻る）
-
-
 『RainyDropsFall』★
 『ハカセくんのあやしいクスリ』
 『アメに唄えば~RainDropsFall~』

@@ -9,6 +9,8 @@ public class NotesFallIn : MonoBehaviour
     private bool isInLine = false;
     private KeyCode _lineKey;
 
+    [SerializeField] private GameObject _itemGetEffect;
+
     void Start () {
         _gameProfile = GameObject.Find("GameProfile");
         _gameController = GameObject.Find ("GameMNG").GetComponent<NotesGameController> ();
@@ -42,6 +44,7 @@ public class NotesFallIn : MonoBehaviour
         if (Input.GetKeyDown (key)) {
             _gameController.GoodTimingFunc (lineNum);
             _gameProfile.GetComponent<GameProfile>()._totalDropsCount ++;
+            Instantiate(_itemGetEffect, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

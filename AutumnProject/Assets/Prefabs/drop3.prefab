@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineNum: 3
+  _itemGetEffect: {fileID: 5507929450143301937, guid: 6c85a57cefdea0e478fbd061adca21bd, type: 3}

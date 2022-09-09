@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8303120214360220716}
   - component: {fileID: 8303120214360220715}
-  - component: {fileID: 8303120214360220714}
+  - component: {fileID: -2111558145955945568}
   - component: {fileID: 8303120214360220713}
   m_Layer: 0
   m_Name: drop0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8303120214360220714
+--- !u!61 &-2111558145955945568
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineNum: 0
+  _itemGetEffect: {fileID: 5507929450143301937, guid: 6c85a57cefdea0e478fbd061adca21bd, type: 3}
