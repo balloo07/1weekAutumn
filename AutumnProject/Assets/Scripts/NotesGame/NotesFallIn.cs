@@ -15,6 +15,7 @@ public class NotesFallIn : MonoBehaviour {
 
     void Update () {
         this.transform.position += Vector3.down * 10 * Time.deltaTime;
+        this.transform.Rotate (0f, 0f, 180f*Time.deltaTime);
 
         if (this.transform.position.y < -5.0f) {
             Destroy(this.gameObject);
