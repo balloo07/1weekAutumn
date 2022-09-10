@@ -7515,7 +7515,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30BF\u30A4\u30C8\u30EB\u3078"
+  m_text: "\u30B2\u30FC\u30E0\u3092\u304A\u308F\u308B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54f93d9bf51992b4e8c346495384fd64, type: 2}
   m_sharedMaterial: {fileID: 1583715016100444208, guid: 54f93d9bf51992b4e8c346495384fd64, type: 2}
@@ -7776,6 +7776,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5942694431340923392, guid: abbf3977aadb25e44b9d48fc77ae82ac, type: 3}
+      propertyPath: _totalDropsCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5942694431340923393, guid: abbf3977aadb25e44b9d48fc77ae82ac, type: 3}
       propertyPath: m_RootOrder
       value: 12
