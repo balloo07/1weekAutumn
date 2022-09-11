@@ -8,7 +8,8 @@ public class GameProfile : MonoBehaviour
     public int _totalDropsCount = 0;
     public float _BGMvolume = 1f;
     public float _SEvolume = 1f;
-
+    public bool _retry = false;
+    
     private void Awake()
     {
         CheckInstance();
@@ -29,11 +30,5 @@ public class GameProfile : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

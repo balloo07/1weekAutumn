@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class Tweet : MonoBehaviour
 {
-    private NotesGameController _gameController;
+    private StageState _stageState;
     private GameProfile _gameProfile;
 
     private void Start()
     {
-        _gameController = GameObject.Find ("GameMNG").GetComponent<NotesGameController> ();
+        _stageState = GameObject.Find ("StageState").GetComponent<StageState> ();
         _gameProfile = GameObject.Find ("GameProfile").GetComponent<GameProfile>();
     }
 
     public void GenerateTweet()
     {
-        var score = _gameController._score.ToString();
-        var totalScore = _gameController._totalNotes.ToString();
-        var result = _gameController._gameResult.ToString().ToUpper();
+        var score = _stageState._score.ToString();
+        var totalScore = _stageState._totalNotes.ToString();
+        var result = _stageState._gameResult.ToString().ToUpper();
         var totalDropsCount = _gameProfile._totalDropsCount;
         
         string resultText;

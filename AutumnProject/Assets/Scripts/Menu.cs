@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    private NotesGameController _gameController;
+    private StageState _stageState;
 
     [SerializeField] private GameObject popupMenu;
     private AudioSource _gameMusic;
@@ -13,17 +13,18 @@ public class Menu : MonoBehaviour
     
     void Start()
     {
-        _gameController = GameObject.Find ("GameMNG").GetComponent<NotesGameController> ();
-        _menuSE = GetComponent<AudioSource>();
+        _stageState = GameObject.Find("StageState").GetComponent<StageState>();
         _gameMusic = GameObject.Find ("GameMusic").GetComponent<AudioSource> ();
+        _menuSE = GetComponent<AudioSource>();
     }
 
     public void MenuActive()
     {
-        var state = _gameController._gameState;
-        if (state == NotesGameController.GameState.Result) return;
+        var state = _stageState._gameState;
+        //イントロと結果画面では無反応
+        if (state == StageState.GameState.Intro || state == StageState.GameState.Result) return;
         _menuSE.Play();
-        if (state==NotesGameController.GameState.MusicPlay)
+        if (state==StageState.GameState.MusicPlay)
         {
             _gameMusic.Pause();
         } 
@@ -34,7 +35,7 @@ public class Menu : MonoBehaviour
     public void MenuHide()
     {
         _menuSE.Play();
-        if (_gameController._gameState == NotesGameController.GameState.MusicPlay)
+        if (_stageState._gameState == StageState.GameState.MusicPlay)
         {
             _gameMusic.Play();
         }
