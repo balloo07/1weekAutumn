@@ -3,7 +3,6 @@ using System.Collections;
 using System.IO;
 using System;
 using System.Collections.Generic;
-using TMPro;
 
 public class NotesGameController : MonoBehaviour
 {
@@ -20,8 +19,6 @@ public class NotesGameController : MonoBehaviour
     private float _startTime = 0;
 
     public float timeOffset = -1;
-
-    public TextMeshProUGUI scoreText;
     public int _score = 0;
     
     [SerializeField] private GameObject _startText;
@@ -34,8 +31,6 @@ public class NotesGameController : MonoBehaviour
 
     private void Update () {
         
-        scoreText.text = "Score:  <color=#99dd44>" + _score.ToString () + "<color=#ffffff> / " + _stageState._totalNotes;
-
         //ゲームは開始しているか
         if (_stageState._gameState == StageState.GameState.Prepare)
         {
@@ -65,7 +60,6 @@ public class NotesGameController : MonoBehaviour
     {
         Time.timeScale = 0f;
         _gameMusic.Stop();
-        _stageState._score = _score;
         this.GetComponent<ResultMNG>().ResultShow();
     }
 
@@ -111,9 +105,6 @@ public class NotesGameController : MonoBehaviour
     }
 
     public void GoodTimingFunc(int num){
-        // Debug.Log ("Line:" + num + " good!");
-        // Debug.Log (GetMusicTime());
-
-        _score++;
+        _stageState._score++;
     }
 }

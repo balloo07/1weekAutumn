@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class StageState : MonoBehaviour
 {
     private GameProfile _gameProfile;
 
-    [SerializeField] private GameObject _IntroPopup;
+    [SerializeField] private GameObject _introPopup;
+    [SerializeField] private TextMeshProUGUI _scoreText;
+
     [SerializeField] private int _stage;
     public GameState _gameState;
     public GameResult _gameResult;
@@ -32,7 +36,7 @@ public class StageState : MonoBehaviour
     }
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _gameProfile = GameObject.Find("GameProfile").GetComponent<GameProfile>();
 
@@ -45,9 +49,14 @@ public class StageState : MonoBehaviour
         else
         {
             _gameState = GameState.Intro;
-            _IntroPopup.SetActive(true);
+            _introPopup.SetActive(true);
             Time.timeScale = 0f;
         }
         _gameResult = GameResult.NotFinished;
+    }
+
+    private void Update()
+    {
+        _scoreText.text = "Score:  <color=#99dd44>" + _score.ToString () + "<color=#ffffff> / " + _totalNotes;
     }
 }
