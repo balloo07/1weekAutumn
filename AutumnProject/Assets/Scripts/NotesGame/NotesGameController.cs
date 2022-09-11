@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class NotesGameController : MonoBehaviour
 {
     //ゲームの進行状況（シーンをまたいで保存）
-    private GameObject _gameProfile;
+    private GameProfile _gameProfile;
         
     public GameObject[] notes;
     private List<float> _timing = new List<float>();
@@ -29,12 +29,19 @@ public class NotesGameController : MonoBehaviour
     
     [SerializeField] private GameObject _startText;
     [SerializeField] private GameObject _resultPopup;
+    [SerializeField] private Image _resultImage;
     [SerializeField] private TextMeshProUGUI _resultText;
 
+    [SerializeField] private Sprite _perfectImage;
+    [SerializeField] private Sprite _excellentImage;
+    [SerializeField] private Sprite _greatImage;
+    [SerializeField] private Sprite _goodImage;
+    [SerializeField] private Sprite _badImage;
+
     [SerializeField] private AudioClip _perfectBGM;
-    [SerializeField] private AudioClip _veryGoodBGM;
+    [SerializeField] private AudioClip _excellentBGM;
+    [SerializeField] private AudioClip _greatBGM;
     [SerializeField] private AudioClip _goodBGM;
-    [SerializeField] private AudioClip _ordinaryBGM;
     [SerializeField] private AudioClip _badBGM;
 
     public enum GameState
@@ -47,9 +54,9 @@ public class NotesGameController : MonoBehaviour
     public enum GameResult
     {
         Perfect,
-        VeryGood,
+        Excellent,
+        Great,
         Good,
-        Ordinary,
         Bad
     }
     
@@ -61,7 +68,7 @@ public class NotesGameController : MonoBehaviour
         _gameState = GameState.Prepare;
         _gameMusic = GameObject.Find ("GameMusic").GetComponent<AudioSource> ();
         LoadCSV ();
-        _gameProfile = GameObject.Find("GameProfile");
+        _gameProfile = GameObject.Find("GameProfile").GetComponent<GameProfile>();
     }
 
     void Update () {
@@ -107,41 +114,48 @@ public class NotesGameController : MonoBehaviour
             _gameResult = GameResult.Perfect;
             audioSorce.clip = _perfectBGM;
             
-            Debug.Log("最高");
-            _resultText.text = "PERFECT!";
+            Debug.Log("完璧");
+            _resultImage.sprite = _perfectImage;
+            _resultText.text = "PERFECT!!!!!<size=23>";
         }
         else if (_score >= _totalNotes*0.8)
         {
-            _gameResult = GameResult.VeryGood;
-            audioSorce.clip = _veryGoodBGM;
+            _gameResult = GameResult.Excellent;
+            audioSorce.clip = _excellentBGM;
 
-            Debug.Log("とても良い");
-            _resultText.text = "VERY GOOD!";
+            Debug.Log("素晴らしい");
+            _resultImage.sprite = _excellentImage;
+            _resultText.text = "Excellent!!!<size=23>";
         }
         else if (_score >= _totalNotes*0.6)
+        {
+            _gameResult = GameResult.Great;
+            audioSorce.clip = _greatBGM;
+
+            Debug.Log("良い調子");
+            _resultImage.sprite = _greatImage;
+            _resultText.text = "GREAT!!<size=23>";
+        }
+        else if (_score >= _totalNotes*0.4)
         {
             _gameResult = GameResult.Good;
             audioSorce.clip = _goodBGM;
 
-            Debug.Log("良い");
-            _resultText.text = "GOOD!";
-        }
-        else if (_score >= _totalNotes*0.4)
-        {
-            _gameResult = GameResult.Ordinary;
-            audioSorce.clip = _ordinaryBGM;
-
-            Debug.Log("普通");
-            _resultText.text = "ORDINARY";
+            Debug.Log("クリア");
+            _resultImage.sprite = _goodImage;
+            _resultText.text = "GOOD!<size=23>";
         }
         else
         {
             _gameResult = GameResult.Bad;
             audioSorce.clip = _badBGM;
 
-            Debug.Log("ダメかも");
-            _resultText.text = "BAD...\nDont mind...";
+            Debug.Log("もう一度");
+            _resultImage.sprite = _badImage;
+            _resultText.text = "Oops...\n<size=23>このままではアメびたしになってしまう\nもう一度チャレンジしてみよう";
         }
+
+        _resultText.text += "\n<size=20><color=#777777>今まで集めたアメの合計："+_gameProfile._totalDropsCount+"コ";
         audioSorce.Play();
     }
 
