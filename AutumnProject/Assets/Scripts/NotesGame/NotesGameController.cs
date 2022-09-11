@@ -116,7 +116,7 @@ public class NotesGameController : MonoBehaviour
             
             Debug.Log("完璧");
             _resultImage.sprite = _perfectImage;
-            _resultText.text = "PERFECT!!!!!<size=23>";
+            _resultText.text = "PERFECT!!!!!\n<size=23>すべてのアメを集めることができた";
         }
         else if (_score >= _totalNotes*0.8)
         {
@@ -125,7 +125,7 @@ public class NotesGameController : MonoBehaviour
 
             Debug.Log("素晴らしい");
             _resultImage.sprite = _excellentImage;
-            _resultText.text = "Excellent!!!<size=23>";
+            _resultText.text = "Excellent!!!\n<size=23>沢山のアメを集めることができた";
         }
         else if (_score >= _totalNotes*0.6)
         {
@@ -134,7 +134,7 @@ public class NotesGameController : MonoBehaviour
 
             Debug.Log("良い調子");
             _resultImage.sprite = _greatImage;
-            _resultText.text = "GREAT!!<size=23>";
+            _resultText.text = "GREAT!!\n<size=23>多くのアメを集めることができた";
         }
         else if (_score >= _totalNotes*0.4)
         {
@@ -143,7 +143,7 @@ public class NotesGameController : MonoBehaviour
 
             Debug.Log("クリア");
             _resultImage.sprite = _goodImage;
-            _resultText.text = "GOOD!<size=23>";
+            _resultText.text = "GOOD!\n<size=23>少しのアメを集めることができた";
         }
         else
         {
