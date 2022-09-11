@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c1babfbda9c23419962513a92e283e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextScene: NotesGameScene
+  _nextScene: 1-FirstScene
 --- !u!114 &1356971979
 MonoBehaviour:
   m_ObjectHideFlags: 0

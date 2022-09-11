@@ -15,7 +15,10 @@ public class ResultMNG : MonoBehaviour
     [SerializeField] private GameObject _resultPopup;
     [SerializeField] private Image _resultImage;
     [SerializeField] private TextMeshProUGUI _resultText;
-    
+
+    [SerializeField] private GameObject _retryButton;
+    [SerializeField] private GameObject _nextButton;
+
     private void Start()
     {
         _gameProfile = GameObject.Find("GameProfile").GetComponent<GameProfile>();
@@ -63,7 +66,9 @@ public class ResultMNG : MonoBehaviour
             _stageState._gameResult = StageState.GameResult.Bad;
             audioSorce.clip = _resultBGM[4];
             _resultImage.sprite = _resultImages[4];
-            _resultText.text = "Oops...\n<size=23>このままではアメびたしになってしまう\nもう一度チャレンジしてみよう";
+            _resultText.text = "Oops...\n<size=23>もう一度チャレンジしてみよう";
+            _retryButton.SetActive(true);
+            _nextButton.SetActive(false);
         }
 
         _resultText.text += "\n<size=20><color=#777777>今まで集めたアメの合計："+_gameProfile._totalDropsCount+"コ";

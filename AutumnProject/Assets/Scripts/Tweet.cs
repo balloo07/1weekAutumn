@@ -20,11 +20,26 @@ public class Tweet : MonoBehaviour
         var totalScore = _stageState._totalNotes.ToString();
         var result = _stageState._gameResult.ToString().ToUpper();
         var totalDropsCount = _gameProfile._totalDropsCount;
+        string stage;
+
+        switch (_stageState._stage)
+        {
+            case 1:
+                stage="雨漏りする棲家";
+                break; 
+            case 2:
+                stage = "甘やかな街角";
+                break;
+            default:
+                stage = "嵐の吹く夜に";
+                break;
+        }
         
         string resultText;
-        naichilab.UnityRoomTweet.Tweet ("rainydropsfall", "ミニゲーム「RainyDropsFall」\n"+
-                                                          "結果は"+result+"!\n"+
-                                                          "スコアは"+score+"/"+totalScore+"\n"+
+        naichilab.UnityRoomTweet.Tweet ("rainydropsfall", "ミニゲーム「RainyDropsFall」\n\n"+
+                                                          "ステージ"+_stageState._stage+"："+stage+"\n"+
+                                                          "スコア："+score+"/"+totalScore+"\n"+
+                                                          result+"！\n\n"+
                                                           "合計"+totalDropsCount+"コのアメを集めました！\n"+
                                                           "#RainyDropsFall");
     }

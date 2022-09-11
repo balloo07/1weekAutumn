@@ -11,7 +11,7 @@ public class StageState : MonoBehaviour
     [SerializeField] private GameObject _introPopup;
     [SerializeField] private TextMeshProUGUI _scoreText;
 
-    [SerializeField] private int _stage;
+    public int _stage;
     public GameState _gameState;
     public GameResult _gameResult;
     public int _totalNotes=0;
