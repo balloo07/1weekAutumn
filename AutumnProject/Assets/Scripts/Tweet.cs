@@ -25,7 +25,7 @@ public class Tweet : MonoBehaviour
         switch (_stageState._stage)
         {
             case 1:
-                stage="雨漏りする棲家";
+                stage = "雨漏りする棲家";
                 break; 
             case 2:
                 stage = "甘やかな街角";
@@ -36,11 +36,10 @@ public class Tweet : MonoBehaviour
         }
         
         string resultText;
-        naichilab.UnityRoomTweet.Tweet ("rainydropsfall", "ミニゲーム「RainyDropsFall」\n\n"+
+        naichilab.UnityRoomTweet.Tweet ("rainydropsfall", "ミニゲーム「#RainyDropsFall」\n\n"+
                                                           "ステージ"+_stageState._stage+"："+stage+"\n"+
                                                           "スコア："+score+"/"+totalScore+"\n"+
                                                           result+"！\n\n"+
-                                                          "合計"+totalDropsCount+"コのアメを集めました！\n"+
-                                                          "#RainyDropsFall");
+                                                          "合計"+totalDropsCount+"コのアメを集めました！");
     }
 }
