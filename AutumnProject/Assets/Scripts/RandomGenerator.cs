@@ -19,6 +19,7 @@ public class RandomGenerator : MonoBehaviour
     private float _time = 0;    //経過時間
     private float _intervalTime;
     
+    [SerializeField] private int _missNoteRate;
     //時間間隔の最小値
     [SerializeField] private float minTime;
     //時間間隔の最大値
@@ -81,12 +82,22 @@ public class RandomGenerator : MonoBehaviour
     {
         var interval = 2.8f;    //ノート同士の間隔
         var num = UnityEngine.Random.Range(0, 5);
+        var randomGomi = UnityEngine.Random.Range(0,_missNoteRate);
         
-        Instantiate (notes[num], 
-            new Vector3 (-2*interval + (interval * num), 10.0f, 0),
-            Quaternion.identity);
-        
-        _notesCount++;
+        if (randomGomi==0)
+        {
+            Instantiate (gomiNotes[num],
+                new Vector3 (-2*interval + (interval * num), 10.0f, 0),
+                Quaternion.identity);
+        }
+        else
+        {
+            Instantiate (notes[num], 
+                new Vector3 (-2*interval + (interval * num), 10.0f, 0),
+                Quaternion.identity);
+            _notesCount++;            
+        }
+
     }
     
     //ランダムな時間を生成する関数
