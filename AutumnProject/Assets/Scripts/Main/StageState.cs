@@ -41,17 +41,17 @@ public class StageState : MonoBehaviour
         _gameProfile = GameObject.Find("GameProfile").GetComponent<GameProfile>();
 
         //リトライのときはイントロを飛ばす
-        if (_gameProfile._retry)
-        {
-            _gameState = GameState.Prepare;
-            Time.timeScale = 1f;
-        }
-        else
-        {
+        // if (_gameProfile._retry)
+        // {
+        //     _gameState = GameState.Prepare;
+        //     Time.timeScale = 1f;
+        // }
+        // else
+        // {
             _gameState = GameState.Intro;
             _introPopup.SetActive(true);
             Time.timeScale = 0f;
-        }
+        // }
         _gameResult = GameResult.NotFinished;
     }
 
