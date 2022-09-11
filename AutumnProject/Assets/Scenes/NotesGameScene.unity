@@ -872,7 +872,6 @@ MonoBehaviour:
   - {fileID: 4916421177206011985, guid: 2391bbffc05d7ed4aac29533fcc57a70, type: 3}
   filePass: CSV/KawaiiRaikyaku
   timeOffset: -1.5
-  _score: 0
   _startText: {fileID: 1951797223}
 --- !u!4 &1956852163
 Transform:

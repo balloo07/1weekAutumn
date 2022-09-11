@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4926449751556274670}
   m_Layer: 0
   m_Name: drop1
-  m_TagString: Untagged
+  m_TagString: Candy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

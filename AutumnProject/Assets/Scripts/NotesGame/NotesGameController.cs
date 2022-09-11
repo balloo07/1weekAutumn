@@ -18,9 +18,7 @@ public class NotesGameController : MonoBehaviour
     private AudioSource _gameMusic;
     private float _startTime = 0;
 
-    public float timeOffset = -1;
-    public int _score = 0;
-    
+    [SerializeField] private float timeOffset = -1;
     [SerializeField] private GameObject _startText;
 
     private void Start(){
@@ -55,7 +53,6 @@ public class NotesGameController : MonoBehaviour
             }
         }
     }
-
     private void ShowResult()
     {
         Time.timeScale = 0f;
@@ -105,6 +102,6 @@ public class NotesGameController : MonoBehaviour
     }
 
     public void GoodTimingFunc(int num){
-        _stageState._score++;
+        // _stageState._score++;
     }
 }
