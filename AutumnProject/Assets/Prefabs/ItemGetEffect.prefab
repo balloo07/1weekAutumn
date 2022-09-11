@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5507929450143301939}
   - component: {fileID: 5507929450143301936}
+  - component: {fileID: 2742843845823959168}
   m_Layer: 0
   m_Name: ItemGetEffect
   m_TagString: Untagged
@@ -42,9 +43,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3066461103679496915, guid: 47a3a515819420346a2c8ded597863ea, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8f630752cc77d3140a85a1bab3de51b2, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_audioClip: {fileID: 8300000, guid: 243365aa9b759da4586226a0eea62bbb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -128,3 +129,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2742843845823959168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5507929450143301937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3d56ce0b0f6cb4580ba1e21956fc45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeTime: 1

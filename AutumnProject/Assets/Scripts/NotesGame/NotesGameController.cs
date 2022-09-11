@@ -175,9 +175,10 @@ public class NotesGameController : MonoBehaviour
     void SpawnNotes(int num)
     {
         var interval = 2.8f;    //ノート同士の間隔
+
         Instantiate (notes[num], 
             new Vector3 (-2*interval + (interval * num), 10.0f, 0),
-            Quaternion.identity);
+            Quaternion.identity);;
     }
 
     void LoadCSV(){

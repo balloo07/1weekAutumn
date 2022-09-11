@@ -16,14 +16,16 @@ public class Tweet : MonoBehaviour
 
     public void GenerateTweet()
     {
-        var _score = _gameController._score.ToString();
-        var _totalScore = _gameController._totalNotes.ToString();
-        var _result = _gameController._gameResult;
-        var _totalDropsCount = _gameProfile._totalDropsCount;
+        var score = _gameController._score.ToString();
+        var totalScore = _gameController._totalNotes.ToString();
+        var result = _gameController._gameResult.ToString().ToUpper();
+        var totalDropsCount = _gameProfile._totalDropsCount;
+        
+        string resultText;
         naichilab.UnityRoomTweet.Tweet ("rainydropsfall", "ミニゲーム「RainyDropsFall」\n"+
-                                                       "結果は"+_result+"\n"+
-                                                       "スコアは"+_score+"/"+_totalScore+"\n"+
-                                                       "合計"+_totalDropsCount+"コのアメを集めました！\n"+
-                                                       "#RainyDropsFalll");
+                                                          "結果は"+result+"!\n"+
+                                                          "スコアは"+score+"/"+totalScore+"\n"+
+                                                          "合計"+totalDropsCount+"コのアメを集めました！\n"+
+                                                          "#RainyDropsFall");
     }
 }
