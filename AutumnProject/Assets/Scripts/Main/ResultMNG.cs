@@ -67,8 +67,9 @@ public class ResultMNG : MonoBehaviour
             audioSorce.clip = _resultBGM[4];
             _resultImage.sprite = _resultImages[4];
             _resultText.text = "Oops...\n<size=23>もう一度チャレンジしてみよう";
-            _retryButton.SetActive(true);
-            _nextButton.SetActive(false);
+            _nextButton.GetComponent<Button>().interactable = false;
+            // _retryButton.SetActive(true);
+            // _nextButton.SetActive(false);
         }
 
         _resultText.text += "\n<size=20><color=#777777>今まで集めたアメの合計："+_gameProfile._totalDropsCount+"コ";
