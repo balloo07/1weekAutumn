@@ -1075,7 +1075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489183456289539371, guid: 8d6e3ea49b6f6b247820a26669177b9c, type: 3}
       propertyPath: minTime
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8489183456289539371, guid: 8d6e3ea49b6f6b247820a26669177b9c, type: 3}
       propertyPath: _startText
@@ -1083,7 +1083,7 @@ PrefabInstance:
       objectReference: {fileID: 1951797223}
     - target: {fileID: 8489183456289539371, guid: 8d6e3ea49b6f6b247820a26669177b9c, type: 3}
       propertyPath: _missNoteRate
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8489183456289539371, guid: 8d6e3ea49b6f6b247820a26669177b9c, type: 3}
       propertyPath: _totalDropsCount
@@ -1440,7 +1440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6450974792187785335, guid: 9b8c3a302f7970f41b64e9e503e1597d, type: 3}
       propertyPath: m_text
-      value: "<size=25>\u30B9\u30C6\u30FC\u30B82/3\n<size=50>\u7518\u3084\u304B\u306A\u8857\u89D2<size=23>\n\u3053\u306E\u3042\u305F\u308A\u306F\u30A4\u30BF\u30BA\u30E9\u3063\u5B50\u304C\u591A\u3044\u3068\u304B\r\n\u30A2\u30E1\u4EE5\u5916\u306E\u3082\u306E\u3082\u5B99\u3092\u821E\u3063\u3066\u3044\u308B\u3088\u3046\u3060\r\n\u307E\u3061\u304C\u3063\u3066\u62FE\u3046\u3068\u30DE\u30A4\u30CA\u30B9\uFF11\u70B9\u306B\u306A\u308B\u306E\u3067\u6CE8\u610F"
+      value: "<size=25>\u30B9\u30C6\u30FC\u30B82/3\n<size=50>\u7518\u3084\u304B\u306A\u8857\u89D2<size=23>\r\n\u30A2\u30E1\u4EE5\u5916\u306E\u3082\u306E\u3082\u5B99\u3092\u821E\u3063\u3066\u3044\u308B\u3088\u3046\u3060\r\n\u307E\u3061\u304C\u3063\u3066\u62FE\u3046\u3068\u30DE\u30A4\u30CA\u30B9\uFF11\u70B9\u306B\u306A\u308B\u306E\u3067\u6CE8\u610F"
       objectReference: {fileID: 0}
     - target: {fileID: 6450974792188847716, guid: 9b8c3a302f7970f41b64e9e503e1597d, type: 3}
       propertyPath: m_AnchorMax.y

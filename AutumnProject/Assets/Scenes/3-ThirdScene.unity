@@ -1087,7 +1087,7 @@ PrefabInstance:
       objectReference: {fileID: 1951797223}
     - target: {fileID: 8489183456289539371, guid: 8d6e3ea49b6f6b247820a26669177b9c, type: 3}
       propertyPath: _missNoteRate
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8489183456289539371, guid: 8d6e3ea49b6f6b247820a26669177b9c, type: 3}
       propertyPath: _totalDropsCount
